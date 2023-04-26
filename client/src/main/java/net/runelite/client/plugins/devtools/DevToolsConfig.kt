@@ -75,4 +75,9 @@ interface DevToolsConfig : Config {
     fun inspectorActive(): Boolean {
         return false
     }
+
+    @ConfigItem(keyName = "widgetInspectorActive", name = "Widget Inspector", description = "")
+    fun widgetInspectorActive(): Boolean {
+        return false
+    }
 }

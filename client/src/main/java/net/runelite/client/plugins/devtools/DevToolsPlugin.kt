@@ -2,6 +2,7 @@ package net.runelite.client.plugins.devtools
 
 import eventbus.events.ConfigChanged
 import eventbus.events.GameStateChanged
+import meteor.dev.widgetinspector.WidgetInspector
 import meteor.plugins.Plugin
 import meteor.plugins.PluginDescriptor
 import meteor.rs.ClientThread
@@ -41,6 +42,13 @@ class DevToolsPlugin : Plugin() {
             inspector.open()
         } else {
             inspector.close()
+        }
+
+        if(it.key == "widgetInspectorActive" && config.widgetInspectorActive())
+        {
+            WidgetInspector.open()
+        }else{
+            WidgetInspector.close()
         }
     }
 }

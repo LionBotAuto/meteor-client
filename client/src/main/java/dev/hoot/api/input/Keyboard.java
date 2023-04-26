@@ -1,5 +1,6 @@
 package dev.hoot.api.input;
 
+import dev.hoot.api.commons.Rand;
 import dev.hoot.api.commons.Time;
 import dev.hoot.api.game.Game;
 
@@ -55,11 +56,10 @@ public class Keyboard
 		KeyEvent typed = new KeyEvent(canvas, KeyEvent.KEY_TYPED, time, 0, 0, c, KeyEvent.KEY_LOCATION_UNKNOWN);
 		canvas.dispatchEvent(pressed);
 		canvas.dispatchEvent(typed);
-		Time.sleep(10);
 		KeyEvent released = new KeyEvent(
 				canvas,
 				KeyEvent.KEY_RELEASED,
-				System.currentTimeMillis(),
+				time + Rand.nextInt(10,15),
 				0,
 				keyCode,
 				c,
